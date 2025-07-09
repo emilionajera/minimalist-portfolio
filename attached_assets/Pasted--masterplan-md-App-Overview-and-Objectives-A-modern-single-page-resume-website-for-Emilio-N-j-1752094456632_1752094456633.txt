@@ -1,0 +1,75 @@
+# masterplan.md
+
+## App Overview and Objectives
+
+A modern, single-page resume website for Emilio Nájera. The site will serve as an online introduction and digital CV, showcasing Emilio's photo, academic and work history, key accomplishments, skills, and contact information. It will also include links to LinkedIn, GitHub, and a personal website.
+
+## Target Audience
+
+* Potential employers or recruiters
+* Academic institutions or collaborators
+* Professional contacts and networks
+
+## Core Features and Functionality
+
+* Hero section with name, photo, and a brief introduction
+* Scrollable single-page layout with navigation links anchored to page sections
+* Sections: Experience Timeline, Highlights, Skills, and Contact
+* Responsive design for desktop and mobile
+* Smooth scrolling navigation and fade-in animations on scroll
+* Light/Dark mode toggle
+* Contact section with email, website, LinkedIn, and GitHub links
+
+## High-Level Technical Stack Recommendations
+
+* **Frontend Framework**: HTML, CSS, and basic JavaScript (ideal for Replit and simplicity)
+* **CSS Utility**: Tailwind CSS or simple custom styles (for clean, minimal design)
+* **Smooth Scroll & Animations**: JavaScript or a lightweight library like AOS (Animate On Scroll)
+* **Dark/Light Theme Toggle**: JavaScript with CSS variables or Tailwind dark mode
+* **Image Hosting**: Use a local placeholder or external image URL for Emilio’s photo
+
+## Conceptual Data Model (Static Content)
+
+* **Profile**: name, photo, intro text
+* **Timeline Items**: role, institution/company, start & end dates, brief description
+* **Highlights**: title, short summary
+* **Skills**: list of technologies/tools/soft skills
+* **Contact**: email, website, LinkedIn URL, GitHub URL
+
+## User Interface Design Principles
+
+* Clean, minimalist layout with generous whitespace
+* Anchor navigation links in a fixed header
+* Hero section with bold name and clean image
+* Consistent typography and iconography
+* Subtle animations to enhance interactivity without distraction
+* Light/Dark mode with smooth transition
+
+## Security Considerations
+
+* Avoid exposing any sensitive information
+* Ensure external links open in new tabs and are safely formatted
+
+## Development Phases or Milestones
+
+1. **Skeleton Layout**: Create HTML structure for all sections
+2. **Basic Styling**: Apply responsive layout and minimalist design
+3. **Add Navigation**: Fixed header with anchor links and smooth scrolling
+4. **Integrate Animations**: Scroll fade-ins and hover effects
+5. **Theme Toggle**: Add light/dark mode switch
+6. **Content Replacement**: Update placeholder text and images with real content
+7. **Testing**: Check responsiveness and interactivity across devices
+
+## Potential Challenges and Solutions
+
+* **Responsive Layout**: Use flex/grid layouts and test frequently on mobile
+* **Theme Toggle**: Manage CSS variables or Tailwind dark mode correctly
+* **Animation Performance**: Keep animations subtle and optimized for smooth UX
+
+## Future Expansion Possibilities
+
+* Add downloadable PDF resume
+* Embed a contact form
+* Add testimonials or references
+* Include a blog or news section
+* Support multiple languages
