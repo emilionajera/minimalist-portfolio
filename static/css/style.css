@@ -138,6 +138,10 @@ body[data-theme="dark"] .nav-header {
   border-bottom: 1px solid #2d3748;
 }
 
+body[data-theme="dark"] .nav-brand a {
+  color: #f7fafc;
+}
+
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -151,7 +155,7 @@ body[data-theme="dark"] .nav-header {
 .nav-brand a {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: #1a202c;
   text-decoration: none;
 }
 
@@ -253,7 +257,7 @@ body[data-theme="dark"] .nav-header {
 .profile-image {
   width: 250px;
   height: 250px;
-  border-radius: 50%;
+  border-radius: 12px;
   border: none;
   box-shadow: var(--shadow-large);
   transition: transform 0.3s ease;
@@ -285,12 +289,7 @@ body[data-theme="dark"] .nav-header {
   text-align: left;
 }
 
-.hero-title {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: var(--text-primary);
-}
+
 
 /* Ensure text is visible in dark mode */
 body[data-theme="dark"] .hero-name {
@@ -304,7 +303,7 @@ body[data-theme="dark"] .hero-name {
 /* Hero Social Links */
 .hero-social {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1rem;
   margin: 2rem 0;
 }
@@ -313,16 +312,16 @@ body[data-theme="dark"] .hero-name {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background: var(--gradient-primary);
   color: white;
   text-decoration: none;
-  border-radius: 50%;
+  border-radius: 12px;
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: var(--shadow-medium);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .social-btn:hover {
@@ -330,9 +329,7 @@ body[data-theme="dark"] .hero-name {
   box-shadow: var(--shadow-large);
 }
 
-.social-btn i {
-  font-size: 1.1rem;
-}
+
 
 
 
@@ -341,9 +338,8 @@ body[data-theme="dark"] .hero-name {
   color: var(--text-secondary);
   margin-bottom: 2rem;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
   line-height: 1.7;
+  margin-top: 1rem;
 }
 
 .hero-cta {
@@ -366,29 +362,27 @@ body[data-theme="dark"] .hero-name {
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
+  background: var(--gradient-primary);
   color: white;
-  border: 2px solid var(--primary-color);
+  border: none;
+  box-shadow: var(--shadow-medium);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-dark);
-  border-color: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-large);
 }
 
 .btn-secondary {
-  background-color: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  box-shadow: var(--shadow-medium);
 }
 
 .btn-secondary:hover {
-  background-color: var(--primary-color);
-  color: white;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-large);
 }
 
 /* Experience Section */
@@ -782,9 +776,9 @@ body[data-theme="dark"] .skill-tag.soft {
   }
   
   .social-btn {
-    width: 45px;
-    height: 45px;
-    font-size: 1.1rem;
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
   }
   
   .mobile-menu-toggle {
@@ -853,6 +847,7 @@ body[data-theme="dark"] .skill-tag.soft {
   .profile-image {
     width: 200px;
     height: 200px;
+    border-radius: 8px;
   }
   
   .education-grid {
