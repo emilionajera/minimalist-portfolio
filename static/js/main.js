@@ -84,16 +84,7 @@ mobileMenuToggle.addEventListener('click', function() {
     mobileMenuToggle.classList.toggle('active');
 });
 
-// Add hover effects to timeline items
-document.querySelectorAll('.timeline-item').forEach(item => {
-    item.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateX(10px)';
-    });
-    
-    item.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateX(0)';
-    });
-});
+
 
 // Parallax effect for hero section
 window.addEventListener('scroll', function() {
