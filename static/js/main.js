@@ -133,7 +133,7 @@ window.addEventListener('load', function() {
 
 // Add intersection observer for section highlighting in navigation
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
+const navigationLinks = document.querySelectorAll('.nav-link');
 
 const observerOptions = {
     root: null,
@@ -147,7 +147,7 @@ const observer = new IntersectionObserver(function(entries) {
             const currentSection = entry.target.getAttribute('id');
             
             // Remove active class from all nav links
-            navLinks.forEach(link => {
+            navigationLinks.forEach(link => {
                 link.classList.remove('active');
             });
             

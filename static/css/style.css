@@ -8,29 +8,33 @@
   --background-color: #ffffff;
   --surface-color: #f8fafc;
   --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --text-muted: #94a3b8;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
   --border-color: #e2e8f0;
   --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
 }
 
-[data-theme="dark"] {
+body[data-theme="dark"] {
   /* Dark theme colors */
-  --primary-color: #3b82f6;
-  --primary-dark: #2563eb;
-  --secondary-color: #94a3b8;
+  --primary-color: #60a5fa;
+  --primary-dark: #3b82f6;
+  --secondary-color: #cbd5e1;
   --accent-color: #fbbf24;
   --background-color: #0f172a;
   --surface-color: #1e293b;
-  --text-primary: #f1f5f9;
-  --text-secondary: #cbd5e1;
-  --text-muted: #64748b;
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
   --border-color: #334155;
-  --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
-  --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-  --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --glass-bg: rgba(15, 23, 42, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 /* Base Styles */
@@ -68,6 +72,20 @@ p {
   color: var(--text-secondary);
 }
 
+/* Ensure better text contrast */
+body[data-theme="dark"] p {
+  color: var(--text-secondary);
+}
+
+body[data-theme="dark"] h1, 
+body[data-theme="dark"] h2, 
+body[data-theme="dark"] h3, 
+body[data-theme="dark"] h4, 
+body[data-theme="dark"] h5, 
+body[data-theme="dark"] h6 {
+  color: var(--text-primary);
+}
+
 /* Layout Components */
 .container {
   max-width: 1200px;
@@ -87,15 +105,21 @@ p {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-color);
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   z-index: 1000;
   transition: all 0.3s ease;
 }
 
-[data-theme="dark"] .nav-header {
-  background: rgba(15, 23, 42, 0.95);
+body[data-theme="dark"] .nav-header {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
@@ -227,6 +251,17 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  /* Fallback for browsers that don't support background-clip */
+  color: var(--primary-color);
+}
+
+/* Ensure text is visible in dark mode */
+body[data-theme="dark"] .hero-title {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--primary-color);
 }
 
 .hero-subtitle {
@@ -630,8 +665,15 @@ p {
 
 /* Animation Enhancements */
 .nav-header.scrolled {
-  background: var(--background-color);
-  box-shadow: var(--shadow-medium);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+}
+
+body[data-theme="dark"] .nav-header.scrolled {
+  background: rgba(15, 23, 42, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
 }
 
 /* Smooth transitions for all interactive elements */
@@ -647,4 +689,32 @@ p {
 .contact-link:focus {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
+}
+
+/* Additional glassmorphic elements */
+.highlight-card,
+.timeline-content,
+.skill-category {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+body[data-theme="dark"] .highlight-card,
+body[data-theme="dark"] .timeline-content,
+body[data-theme="dark"] .skill-category {
+  background-color: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure nav links are visible in dark mode */
+body[data-theme="dark"] .nav-link {
+  color: var(--text-secondary);
+}
+
+body[data-theme="dark"] .nav-link:hover {
+  color: var(--primary-color);
+}
+
+body[data-theme="dark"] .nav-brand a {
+  color: var(--primary-color);
 }
