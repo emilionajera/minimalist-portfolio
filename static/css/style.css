@@ -1,40 +1,40 @@
 /* CSS Custom Properties for Theme */
 :root {
-  /* Light theme colors */
-  --primary-color: #2563eb;
-  --primary-dark: #1d4ed8;
+  /* Light theme colors - Purple theme */
+  --primary-color: #aa20f5;
+  --primary-dark: #8e1bc9;
   --secondary-color: #64748b;
-  --accent-color: #f59e0b;
+  --accent-color: #d946ef;
   --background-color: #ffffff;
-  --surface-color: #f8fafc;
+  --surface-color: #faf8ff;
   --text-primary: #1e293b;
   --text-secondary: #475569;
   --text-muted: #64748b;
   --border-color: #e2e8f0;
-  --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-light: 0 1px 3px 0 rgba(170, 32, 245, 0.1);
+  --shadow-medium: 0 4px 6px -1px rgba(170, 32, 245, 0.1);
+  --shadow-large: 0 10px 15px -3px rgba(170, 32, 245, 0.1);
   --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-border: rgba(170, 32, 245, 0.2);
 }
 
 body[data-theme="dark"] {
-  /* Dark theme colors */
-  --primary-color: #60a5fa;
-  --primary-dark: #3b82f6;
+  /* Dark theme colors - Purple theme */
+  --primary-color: #c084fc;
+  --primary-dark: #a855f7;
   --secondary-color: #cbd5e1;
-  --accent-color: #fbbf24;
-  --background-color: #0f172a;
-  --surface-color: #1e293b;
+  --accent-color: #d946ef;
+  --background-color: #0f0a1a;
+  --surface-color: #1a0f2e;
   --text-primary: #f8fafc;
   --text-secondary: #e2e8f0;
   --text-muted: #94a3b8;
   --border-color: #334155;
-  --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
-  --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-  --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-  --glass-bg: rgba(15, 23, 42, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow-light: 0 1px 3px 0 rgba(170, 32, 245, 0.3);
+  --shadow-medium: 0 4px 6px -1px rgba(170, 32, 245, 0.3);
+  --shadow-large: 0 10px 15px -3px rgba(170, 32, 245, 0.3);
+  --glass-bg: rgba(15, 10, 26, 0.1);
+  --glass-border: rgba(170, 32, 245, 0.2);
 }
 
 /* Base Styles */
@@ -189,6 +189,42 @@ body[data-theme="dark"] .nav-header {
 .theme-toggle:hover {
   border-color: var(--primary-color);
   color: var(--primary-color);
+}
+
+/* Social Links in Navigation */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.social-link:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+body[data-theme="dark"] .social-link {
+  background: var(--primary-color);
+  color: white;
+}
+
+body[data-theme="dark"] .social-link:hover {
+  background: var(--primary-dark);
 }
 
 .mobile-menu-toggle {
@@ -584,6 +620,16 @@ body[data-theme="dark"] .hero-title {
 @media (max-width: 768px) {
   .nav-links {
     display: none;
+  }
+  
+  .social-links {
+    gap: 0.5rem;
+  }
+  
+  .social-link {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
   }
   
   .mobile-menu-toggle {
