@@ -2,11 +2,12 @@
 
 ## Overview
 
-This is a single-page resume website for Emilio Nájera built with Flask. The project creates a modern, responsive portfolio site with smooth animations, dark/light mode toggle, and a clean minimalist design. The site serves as a digital CV showcasing professional experience, skills, and contact information.
+This is a single-page resume website for Emilio Nájera built with Flask. The project creates a modern, responsive portfolio site with smooth animations, dark/light mode toggle, and a clean minimalist design featuring a blue-light purple gradient theme. The site serves as a digital CV showcasing professional experience, education, skills, and contact information with a sideways hero layout and glassmorphic navigation header.
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Design preferences: Blue-light purple gradient theme (#667eea to #764ba2), glassmorphic navigation with minimal borders, sideways hero layout with profile image on left, icon-only social buttons, pastel-colored skill tags.
 
 ## System Architecture
 
