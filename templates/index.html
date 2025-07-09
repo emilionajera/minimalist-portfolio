@@ -26,17 +26,10 @@
             </div>
             <div class="nav-links">
                 <a href="#experience" class="nav-link">Experience</a>
+                <a href="#education" class="nav-link">Education</a>
                 <a href="#highlights" class="nav-link">Highlights</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/emilionajera/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/emilionajera" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                     <i class="fas fa-moon"></i>
                 </button>
@@ -56,15 +49,63 @@
                 <div class="hero-image">
                     <img src="{{ url_for('static', filename='images/emilio-profile-new.jpg') }}" alt="Emilio Nájera" class="profile-image">
                 </div>
-                <h1 class="hero-title">Emilio Nájera</h1>
-                <p class="hero-subtitle">Software Engineer & Technology Enthusiast</p>
+                <p class="hero-greeting">Hi, I'm <span class="hero-name">Emilio Nájera</span></p>
+                <h1 class="hero-title">Software Engineer & Technology Enthusiast</h1>
                 <p class="hero-description">
-                    Passionate about creating innovative solutions and building scalable applications. 
-                    Experienced in full-stack development with a focus on modern web technologies and user experience.
+                    <strong>Passionate</strong> about creating <strong>innovative solutions</strong> and building <strong>scalable applications</strong>. 
+                    Experienced in <strong>full-stack development</strong> with a focus on <strong>modern web technologies</strong> and <strong>user experience</strong>.
                 </p>
+                <div class="hero-social">
+                    <a href="https://www.linkedin.com/in/emilionajera/" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/emilionajera" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
                 <div class="hero-cta">
                     <a href="#contact" class="btn-primary">Get In Touch</a>
                     <a href="#experience" class="btn-secondary">View Experience</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Education</h2>
+            <div class="education-grid">
+                <div class="education-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Bachelor's Degree in Computer Science</h3>
+                        <p class="education-institution"><strong>University Name</strong></p>
+                        <p class="education-date">2018 - 2022</p>
+                        <p class="education-description">
+                            <strong>Relevant Coursework:</strong> Data Structures, Algorithms, Software Engineering, 
+                            Database Systems, Web Development, Computer Networks
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="education-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Certified Cloud Developer</h3>
+                        <p class="education-institution"><strong>AWS Certification</strong></p>
+                        <p class="education-date">2023</p>
+                        <p class="education-description">
+                            <strong>Skills Covered:</strong> Cloud Architecture, DevOps, Serverless Computing, 
+                            Container Orchestration, CI/CD Pipelines
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -168,7 +209,7 @@
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Skills & Technologies</h2>
             <div class="skills-container">
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                <div class="skill-category frontend" data-aos="fade-up" data-aos-delay="100">
                     <h3>Frontend Development</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">JavaScript</span>
@@ -180,7 +221,7 @@
                     </div>
                 </div>
                 
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-category backend" data-aos="fade-up" data-aos-delay="200">
                     <h3>Backend Development</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Python</span>
@@ -192,7 +233,7 @@
                     </div>
                 </div>
                 
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                <div class="skill-category tools" data-aos="fade-up" data-aos-delay="300">
                     <h3>Tools & Technologies</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Git</span>
@@ -204,15 +245,15 @@
                     </div>
                 </div>
                 
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                <div class="skill-category soft" data-aos="fade-up" data-aos-delay="400">
                     <h3>Soft Skills</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Team Leadership</span>
-                        <span class="skill-tag">Project Management</span>
-                        <span class="skill-tag">Problem Solving</span>
-                        <span class="skill-tag">Communication</span>
-                        <span class="skill-tag">Agile/Scrum</span>
-                        <span class="skill-tag">Mentoring</span>
+                        <span class="skill-tag"><strong>Team Leadership</strong></span>
+                        <span class="skill-tag"><strong>Project Management</strong></span>
+                        <span class="skill-tag"><strong>Problem Solving</strong></span>
+                        <span class="skill-tag"><strong>Communication</strong></span>
+                        <span class="skill-tag"><strong>Agile/Scrum</strong></span>
+                        <span class="skill-tag"><strong>Mentoring</strong></span>
                     </div>
                 </div>
             </div>

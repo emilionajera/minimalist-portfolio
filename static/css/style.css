@@ -1,40 +1,58 @@
 /* CSS Custom Properties for Theme */
 :root {
-  /* Light theme colors - Purple theme */
-  --primary-color: #aa20f5;
-  --primary-dark: #8e1bc9;
+  /* Light theme colors - Blue-Light Purple gradient theme */
+  --primary-color: #667eea;
+  --primary-dark: #5a67d8;
   --secondary-color: #64748b;
-  --accent-color: #d946ef;
+  --accent-color: #764ba2;
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --background-color: #ffffff;
-  --surface-color: #faf8ff;
-  --text-primary: #1e293b;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
+  --surface-color: #f7fafc;
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
   --border-color: #e2e8f0;
-  --shadow-light: 0 1px 3px 0 rgba(170, 32, 245, 0.1);
-  --shadow-medium: 0 4px 6px -1px rgba(170, 32, 245, 0.1);
-  --shadow-large: 0 10px 15px -3px rgba(170, 32, 245, 0.1);
+  --shadow-light: 0 1px 3px 0 rgba(102, 126, 234, 0.1);
+  --shadow-medium: 0 4px 6px -1px rgba(102, 126, 234, 0.1);
+  --shadow-large: 0 10px 15px -3px rgba(102, 126, 234, 0.1);
   --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(170, 32, 245, 0.2);
+  --glass-border: rgba(102, 126, 234, 0.2);
+  
+  /* Pastel colors for skill categories */
+  --pastel-blue: #e3f2fd;
+  --pastel-purple: #f3e5f5;
+  --pastel-green: #e8f5e8;
+  --pastel-orange: #fff3e0;
+  --pastel-pink: #fce4ec;
+  --pastel-cyan: #e0f2f1;
 }
 
 body[data-theme="dark"] {
-  /* Dark theme colors - Purple theme */
-  --primary-color: #c084fc;
-  --primary-dark: #a855f7;
+  /* Dark theme colors - Blue-Light Purple gradient theme */
+  --primary-color: #9f7aea;
+  --primary-dark: #805ad5;
   --secondary-color: #cbd5e1;
-  --accent-color: #d946ef;
-  --background-color: #0f0a1a;
-  --surface-color: #1a0f2e;
-  --text-primary: #f8fafc;
+  --accent-color: #b794f6;
+  --gradient-primary: linear-gradient(135deg, #9f7aea 0%, #b794f6 100%);
+  --background-color: #0a0e1a;
+  --surface-color: #1a1f2e;
+  --text-primary: #f7fafc;
   --text-secondary: #e2e8f0;
-  --text-muted: #94a3b8;
-  --border-color: #334155;
-  --shadow-light: 0 1px 3px 0 rgba(170, 32, 245, 0.3);
-  --shadow-medium: 0 4px 6px -1px rgba(170, 32, 245, 0.3);
-  --shadow-large: 0 10px 15px -3px rgba(170, 32, 245, 0.3);
-  --glass-bg: rgba(15, 10, 26, 0.1);
-  --glass-border: rgba(170, 32, 245, 0.2);
+  --text-muted: #a0aec0;
+  --border-color: #2d3748;
+  --shadow-light: 0 1px 3px 0 rgba(159, 122, 234, 0.3);
+  --shadow-medium: 0 4px 6px -1px rgba(159, 122, 234, 0.3);
+  --shadow-large: 0 10px 15px -3px rgba(159, 122, 234, 0.3);
+  --glass-bg: rgba(10, 14, 26, 0.1);
+  --glass-border: rgba(159, 122, 234, 0.2);
+  
+  /* Darker pastel colors for dark mode */
+  --pastel-blue: #1a365d;
+  --pastel-purple: #322659;
+  --pastel-green: #1c4532;
+  --pastel-orange: #744210;
+  --pastel-pink: #702459;
+  --pastel-cyan: #234e52;
 }
 
 /* Base Styles */
@@ -191,41 +209,7 @@ body[data-theme="dark"] .nav-header {
   color: var(--primary-color);
 }
 
-/* Social Links in Navigation */
-.social-links {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
 
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: var(--primary-color);
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-}
-
-.social-link:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
-}
-
-body[data-theme="dark"] .social-link {
-  background: var(--primary-color);
-  color: white;
-}
-
-body[data-theme="dark"] .social-link:hover {
-  background: var(--primary-dark);
-}
 
 .mobile-menu-toggle {
   display: none;
@@ -279,41 +263,79 @@ body[data-theme="dark"] .social-link:hover {
   transform: scale(1.05);
 }
 
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+.hero-greeting {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.hero-name {
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  /* Fallback for browsers that don't support background-clip */
+  font-weight: 700;
   color: var(--primary-color);
+}
+
+.hero-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
 }
 
 /* Ensure text is visible in dark mode */
-body[data-theme="dark"] .hero-title {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+body[data-theme="dark"] .hero-name {
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: var(--primary-color);
 }
 
-.hero-subtitle {
-  font-size: 1.5rem;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  font-weight: 500;
+/* Hero Social Links */
+.hero-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
 }
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--gradient-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-medium);
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-large);
+}
+
+.social-btn i {
+  font-size: 1.1rem;
+}
+
+
 
 .hero-description {
   font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 2.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.7;
 }
 
 .hero-cta {
@@ -474,7 +496,7 @@ body[data-theme="dark"] .hero-title {
 .highlight-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: var(--gradient-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -482,6 +504,72 @@ body[data-theme="dark"] .hero-title {
   margin: 0 auto 1.5rem;
   font-size: 2rem;
   color: white;
+}
+
+/* Education Section */
+.education-section {
+  padding: 100px 0;
+  background-color: var(--background-color);
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.education-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background-color: var(--surface-color);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-large);
+}
+
+.education-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.education-content h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.education-institution {
+  color: var(--primary-color);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.education-date {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.education-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .highlight-card h3 {
@@ -532,6 +620,27 @@ body[data-theme="dark"] .hero-title {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+}
+
+/* Skill categories with pastel colors */
+.skill-category.frontend {
+  background-color: var(--pastel-blue);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.skill-category.backend {
+  background-color: var(--pastel-purple);
+  border-color: rgba(118, 75, 162, 0.3);
+}
+
+.skill-category.tools {
+  background-color: var(--pastel-green);
+  border-color: rgba(72, 187, 120, 0.3);
+}
+
+.skill-category.soft {
+  background-color: var(--pastel-pink);
+  border-color: rgba(236, 72, 153, 0.3);
 }
 
 .skill-tag {
@@ -622,13 +731,13 @@ body[data-theme="dark"] .hero-title {
     display: none;
   }
   
-  .social-links {
-    gap: 0.5rem;
+  .hero-social {
+    flex-direction: column;
+    gap: 0.75rem;
   }
   
-  .social-link {
-    width: 32px;
-    height: 32px;
+  .social-btn {
+    padding: 0.6rem 1.25rem;
     font-size: 0.9rem;
   }
   
@@ -636,12 +745,12 @@ body[data-theme="dark"] .hero-title {
     display: flex;
   }
   
-  .hero-title {
-    font-size: 2.5rem;
+  .hero-greeting {
+    font-size: 1.5rem;
   }
   
-  .hero-subtitle {
-    font-size: 1.25rem;
+  .hero-title {
+    font-size: 2.25rem;
   }
   
   .hero-cta {
@@ -683,8 +792,21 @@ body[data-theme="dark"] .hero-title {
 }
 
 @media (max-width: 480px) {
+  .hero-greeting {
+    font-size: 1.25rem;
+  }
+  
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+  
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .education-card {
+    flex-direction: column;
+    text-align: center;
   }
   
   .section-title {
