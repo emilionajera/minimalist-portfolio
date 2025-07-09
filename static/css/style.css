@@ -29,11 +29,11 @@
 
 body[data-theme="dark"] {
   /* Dark theme colors - Blue-Light Purple gradient theme */
-  --primary-color: #9f7aea;
-  --primary-dark: #805ad5;
+  --primary-color: #5eacff;
+  --primary-dark: #4f9df5;
   --secondary-color: #cbd5e1;
-  --accent-color: #b794f6;
-  --gradient-primary: linear-gradient(135deg, #9f7aea 0%, #b794f6 100%);
+  --accent-color: #667eea;
+  --gradient-primary: linear-gradient(135deg, #5eacff 0%, #667eea 100%);
   --background-color: #0a0e1a;
   --surface-color: #1a1f2e;
   --text-primary: #f7fafc;
@@ -267,6 +267,12 @@ body[data-theme="dark"] .highlight-icon {
   background: linear-gradient(135deg, var(--surface-color) 0%, var(--background-color) 100%);
 }
 
+@media (min-width: 1200px) {
+  .hero-section {
+    min-height: 120vh;
+  }
+}
+
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -360,7 +366,7 @@ body[data-theme="dark"] .hero-greeting-text {
 .hero-cta {
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -528,7 +534,7 @@ body[data-theme="dark"] .hero-greeting-text {
 
 /* Education Section */
 .education-section {
-  padding: 100px 0;
+  padding: 133px 0;
   background-color: var(--background-color);
 }
 
