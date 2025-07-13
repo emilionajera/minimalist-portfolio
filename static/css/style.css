@@ -260,10 +260,11 @@ body[data-theme="dark"] .highlight-icon {
 
 /* Hero Section */
 .hero-section {
-  min-height: 100vh;
+  /*border: solid red;*/
+  min-height: 100vh; /*? huh */
   display: flex;
   align-items: center;
-  padding: 100px 0 50px;
+  padding: 0 0 50px;
   background: linear-gradient(135deg, var(--surface-color) 0%, var(--background-color) 100%);
 }
 
@@ -274,6 +275,7 @@ body[data-theme="dark"] .highlight-icon {
 }
 
 .hero-container {
+  /*border: 1px solid lime;*/
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -402,7 +404,7 @@ body[data-theme="dark"] .hero-greeting-text {
   background-image: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
-  border-radius: 50px;
+  border-radius: 8px;
 }
 
 .btn-secondary:hover {
