@@ -1,0 +1,13 @@
+// Footer styles
+/* Footer */
+.footer {
+   background-color: var(--surface-color);
+   border-top: 1px solid var(--border-color);
+   padding: 2rem 0;
+   text-align: center;
+}
+
+.footer p {
+   color: var(--text-muted);
+   font-size: 0.9rem;
+}

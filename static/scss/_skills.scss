@@ -1,0 +1,100 @@
+// Skills styles
+.skills-section {
+   padding: 6.25rem 0;
+   background-color: var(--surface-color);
+}
+
+.skills-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+   gap: 2.5rem;
+   margin-top: 3rem;
+}
+
+.skill-category {
+   background-color: var(--background-color);
+   padding: 2rem;
+   border-radius: 0.75rem;
+   border: 1px solid var(--border-color);
+   box-shadow: var(--shadow-light);
+   transition: transform 0.3s;
+
+   &:hover {
+      transform: translateY(-0.1875rem);
+      box-shadow: var(--shadow-medium);
+   }
+
+   body[data-theme="dark"] & {
+      background-color: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+   }
+
+   h3 {
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.25rem;
+   }
+}
+
+.skill-tags {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.75rem;
+}
+
+.skill-tag {
+   padding: 0.5rem 1rem;
+   border-radius: 1.25rem;
+   font-size: 0.9rem;
+   font-weight: 500;
+   transition: all 0.3s;
+
+   &.frontend {
+      background-color: var(--pastel-blue);
+      color: #1e40af;
+      border: 1px solid rgba(30, 64, 175, 0.2);
+
+      body[data-theme="dark"] & {
+         background-color: var(--pastel-blue);
+         color: #93c5fd;
+      }
+   }
+
+   &.backend {
+      background-color: var(--pastel-purple);
+      color: #7c3aed;
+      border: 1px solid rgba(124, 58, 237, 0.2);
+
+      body[data-theme="dark"] & {
+         background-color: var(--pastel-purple);
+         color: #c4b5fd;
+      }
+   }
+
+   &.tools {
+      background-color: var(--pastel-green);
+      color: #059669;
+      border: 1px solid rgba(5, 150, 105, 0.2);
+
+      body[data-theme="dark"] & {
+         background-color: var(--pastel-green);
+         color: #6ee7b7;
+      }
+   }
+
+   &.soft {
+      background-color: #fef2f2;
+      color: #dc2626;
+      border: 1px solid rgba(220, 38, 38, 0.2);
+
+      body[data-theme="dark"] & {
+         background-color: #7f1d1d;
+         color: #fca5a5;
+      }
+   }
+
+   &:hover {
+      transform: translateY(-0.1875rem);
+      box-shadow: var(--shadow-medium);
+   }
+}

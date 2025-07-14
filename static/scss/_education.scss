@@ -1,0 +1,78 @@
+// Education styles
+.education-section {
+   min-height: 90vh;
+   background-color: var(--background-color);
+   display: grid;
+   align-items: center;
+   padding-bottom: 8rem;
+}
+
+.education-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+   gap: 2rem;
+   margin-top: 3rem;
+}
+
+.education-card {
+   display: flex;
+   align-items: flex-start;
+   gap: 1.5rem;
+   background-color: var(--surface-color);
+   padding: 2rem;
+   border-radius: 1rem;
+   border: 1px solid var(--border-color);
+   box-shadow: var(--shadow-light);
+   transition: all 0.3s; //! añadir !important
+   // !important -> hover effect pero no hay transición de entrada limpia
+
+   &:hover {
+      transform: translateY(-0.3rem) !important;
+      box-shadow: var(--shadow-large);
+   }
+
+   body[data-theme="dark"] & {
+      background-color: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+   }
+}
+
+.education-icon {
+   width: 3.75rem;
+   height: 3.75rem;
+   background: var(--gradient-primary);
+   border-radius: 0.75rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.5rem;
+   color: white;
+   flex-shrink: 0;
+
+   body[data-theme="dark"] & {
+      background: var(--gradient-primary);
+   }
+}
+
+.education-content h3 {
+   color: var(--text-primary);
+   margin-bottom: 0.5rem;
+   font-size: 1.25rem;
+}
+
+.education-institution {
+   color: var(--primary-color);
+   font-size: 1rem;
+   margin-bottom: 0.5rem;
+}
+
+.education-date {
+   color: var(--text-muted);
+   font-size: 0.9rem;
+   margin-bottom: 1rem;
+}
+
+.education-description {
+   color: var(--text-secondary);
+   line-height: 1.6;
+}

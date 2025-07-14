@@ -1,0 +1,86 @@
+// Responsive styles
+@media (max-width: 48rem) {
+   .nav-links {
+      display: none;
+   }
+
+   .hero-content {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+   }
+
+   .hero-text {
+      text-align: center;
+   }
+
+   .social-btn {
+      width: 3.4375rem;
+      height: 3.4375rem;
+      font-size: 1.3rem;
+   }
+
+   .mobile-menu-toggle {
+      display: flex;
+   }
+
+   .hero-greeting {
+      font-size: 2rem;
+   }
+
+   .hero-image {
+      width: 13.75rem;
+      height: 13.75rem;
+   }
+
+   .profile-image {
+      width: 12.5rem;
+      height: 12.5rem;
+      border-radius: 0.5rem;
+   }
+
+   .education-grid {
+      grid-template-columns: 1fr;
+   }
+
+   .section-title {
+      font-size: 1.75rem;
+   }
+
+   .timeline-content {
+      padding: 1.5rem;
+   }
+
+   .highlight-card {
+      padding: 2rem 1.5rem;
+   }
+
+   .skill-category {
+      padding: 1.5rem;
+   }
+
+   .contact-links {
+      grid-template-columns: 1fr;
+   }
+
+   .container,
+   .nav-container {
+      padding: 0 1rem;
+   }
+}
+
+@media (max-width: 30rem) {
+   .hero-greeting {
+      font-size: 1.75rem;
+   }
+
+   .hero-image {
+      width: 11.25rem;
+      height: 11.25rem;
+   }
+
+   .profile-image {
+      width: 9.375rem;
+      height: 9.375rem;
+   }
+}

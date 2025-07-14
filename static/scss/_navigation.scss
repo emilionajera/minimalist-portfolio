@@ -1,0 +1,118 @@
+// Navigation styles
+.nav-header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   background: var(--glass-bg);
+   backdrop-filter: blur(1.25rem) saturate(180%);
+   border: none;
+   border-bottom: 1px solid #f5f5f5;
+   z-index: 1000;
+   transition: all 0.3s;
+
+   body[data-theme="dark"] & {
+      background: var(--glass-bg);
+      border-bottom: 1px solid #2d3748;
+   }
+}
+
+/* Animation Enhancements */
+.nav-header.scrolled {
+   background: rgba(255, 255, 255, 0.15);
+   backdrop-filter: blur(25px) saturate(200%);
+   -webkit-backdrop-filter: blur(25px) saturate(200%);
+   border-bottom: 1px solid #e2e8f0;
+}
+
+body[data-theme="dark"] .nav-header.scrolled {
+   background: rgba(10, 14, 26, 0.2);
+   border-bottom: 1px solid #2d3748;
+}
+
+.nav-container {
+   max-width: 75rem;
+   margin: 0 auto;
+   padding: 0 2rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 4.375rem;
+}
+
+.nav-brand a {
+   font-size: 1.5rem;
+   font-weight: 700;
+   color: #1a202c;
+   text-decoration: none;
+
+   body[data-theme="dark"] & {
+      color: #f7fafc;
+   }
+}
+
+.nav-links {
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+}
+
+.nav-link {
+   color: var(--text-secondary);
+   text-decoration: none;
+   font-weight: 500;
+   transition: color 0.3s;
+   position: relative;
+
+   &:hover {
+      color: var(--primary-color);
+   }
+
+   &::after {
+      content: '';
+      position: absolute;
+      bottom: -0.3125rem;
+      left: 0;
+      width: 0;
+      height: 0.125rem;
+      background-color: var(--primary-color);
+      transition: width 0.3s;
+   }
+
+   &:hover::after {
+      width: 100%;
+   }
+}
+
+.theme-toggle {
+   background: none;
+   border: 2px solid var(--border-color);
+   border-radius: 50%;
+   width: 2.5rem;
+   height: 2.5rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   transition: all 0.3s;
+   color: var(--text-secondary);
+
+   &:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+   }
+}
+
+.mobile-menu-toggle {
+   display: none;
+   flex-direction: column;
+   cursor: pointer;
+
+   span {
+      width: 1.5625rem;
+      height: 0.1875rem;
+      background-color: var(--text-primary);
+      margin: 0.1875rem 0;
+      transition: 0.3s;
+   }
+}

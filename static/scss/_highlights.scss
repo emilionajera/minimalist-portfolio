@@ -1,0 +1,54 @@
+// Highlights styles
+.highlights-section {
+   padding: 6.25rem 0;
+   background-color: var(--background-color);
+}
+
+.highlights-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+   gap: 2rem;
+   margin-top: 3rem;
+}
+
+.highlight-card {
+   background-color: var(--surface-color);
+   padding: 2.5rem 2rem;
+   border-radius: 1rem;
+   text-align: center;
+   border: 1px solid var(--border-color);
+   transition: all 0.3s; //! añadir !important
+      // !important -> hover effect pero no hay transición de entrada limpia
+   box-shadow: var(--shadow-light);
+
+   h3 {
+      font-size: 1.3rem;
+   }
+
+   &:hover {
+      transform: translateY(-0.1875rem) !important;
+      box-shadow: var(--shadow-large);
+   }
+
+   body[data-theme="dark"] & {
+      background-color: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+   }
+}
+
+.highlight-icon {
+   width: 5rem;
+   height: 5rem;
+   background: var(--gradient-primary);
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 0 auto 1.5rem;
+   font-size: 2rem;
+   color: white;
+
+   body[data-theme="dark"] & {
+      background: var(--gradient-primary);
+   }
+}
