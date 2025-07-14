@@ -14,6 +14,10 @@
       text-align: center;
    }
 
+   .hero-cta {
+      justify-content: center;
+   }
+
    .social-btn {
       width: 3.4375rem;
       height: 3.4375rem;
@@ -82,5 +86,27 @@
    .profile-image {
       width: 9.375rem;
       height: 9.375rem;
+   }
+}
+
+@media (max-width: 410px) {
+   .hero-section {
+      padding-top: 12vh;
+      min-height: 80vh;
+   }
+   .education-card {
+      flex-direction: column;
+      align-items: center; // Ensures icon and content are centered
+      text-align: center;
+   }
+
+   .education-content {
+      width: 100%; // Ensures content fills card width
+      max-width: 100%; // Prevents overflow
+      margin: 0; // Removes any left/right margin
+   }
+
+   .education-icon {
+      margin-bottom: 1rem; // Adds spacing below icon
    }
 }

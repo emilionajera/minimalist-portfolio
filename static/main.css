@@ -401,7 +401,6 @@ body[data-theme=dark] .hero-name {
 }
 
 .timeline-item {
-  border: solid red;
   position: relative;
   margin-bottom: 3rem;
   padding-left: 5rem;
@@ -423,7 +422,6 @@ body[data-theme=dark] .timeline-marker {
 }
 
 .timeline-content {
-  border: solid lime;
   background-color: var(--background-color);
   padding: 2rem;
   border-radius: 0.75rem;
@@ -441,7 +439,6 @@ body[data-theme=dark] .timeline-content {
 }
 
 .timeline-header {
-  border: solid plum;
   margin-bottom: 1rem;
 }
 .timeline-header h3 {
@@ -543,13 +540,13 @@ body[data-theme=dark] .highlight-icon {
   gap: 1.5rem;
   background-color: var(--surface-color);
   padding: 2rem;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-light);
   transition: all 0.3s;
 }
 .education-card:hover {
-  transform: translateY(-0.3rem) !important;
+  transform: translateY(-0.2rem) !important;
   box-shadow: var(--shadow-large);
 }
 body[data-theme=dark] .education-card {
@@ -771,6 +768,9 @@ body[data-theme=dark] .contact-link i {
   .hero-text {
     text-align: center;
   }
+  .hero-cta {
+    justify-content: center;
+  }
   .social-btn {
     width: 3.4375rem;
     height: 3.4375rem;
@@ -825,6 +825,25 @@ body[data-theme=dark] .contact-link i {
   .profile-image {
     width: 9.375rem;
     height: 9.375rem;
+  }
+}
+@media (max-width: 410px) {
+  .hero-section {
+    padding-top: 12vh;
+    min-height: 80vh;
+  }
+  .education-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .education-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+  .education-icon {
+    margin-bottom: 1rem;
   }
 }
 

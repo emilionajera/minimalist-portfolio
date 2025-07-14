@@ -20,14 +20,14 @@
    gap: 1.5rem;
    background-color: var(--surface-color);
    padding: 2rem;
-   border-radius: 1rem;
+   border-radius: 0.75rem;
    border: 1px solid var(--border-color);
    box-shadow: var(--shadow-light);
    transition: all 0.3s; //! añadir !important
    // !important -> hover effect pero no hay transición de entrada limpia
 
    &:hover {
-      transform: translateY(-0.3rem) !important;
+      transform: translateY(-0.2rem) !important;
       box-shadow: var(--shadow-large);
    }
 
