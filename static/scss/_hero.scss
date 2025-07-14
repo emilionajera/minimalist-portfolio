@@ -100,6 +100,11 @@
    display: inline-flex;
    align-items: center;
    gap: 0.5rem;
+
+   &:hover {
+      transform: translateY(-0.2rem);
+      box-shadow: var(--shadow-large);
+   }
 }
 
 .btn-primary {
@@ -107,11 +112,6 @@
    color: white;
    border: none;
    box-shadow: var(--shadow-medium);
-
-   &:hover {
-      transform: translateY(-0.2rem);
-      box-shadow: var(--shadow-large);
-   }
 }
 
 /* Ensure text is visible in dark mode */
@@ -125,8 +125,6 @@ body[data-theme="dark"] .hero-name {
 
 .btn-secondary {
    position: relative;
-   padding: 0.5rem 1.5rem;
-   border-radius: 0.5rem;
    background: transparent;
    color: transparent;
    background-image: var(--gradient-primary);
