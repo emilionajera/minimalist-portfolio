@@ -47,6 +47,80 @@
 
 
 </head>
+<script>
+    // Dynamically load the Mendable script
+    function loadMendableScript(callback) {
+        const script = document.createElement("script");
+        script.src = "https://unpkg.com/@mendable/search@0.0.203/dist/umd/mendable-bundle.min.js";
+        script.defer = true;
+        script.onload = callback;
+        document.body.appendChild(script);
+    }
+
+    // Initialize Mendable widget
+    function initMendable() {
+        if (!window.Mendable) {
+            console.error("Mendable is not loaded yet.");
+            return;
+        }
+
+        Mendable.initialize({
+            // Core
+            anon_key: '9e11c16e-4f03-4b29-bdaa-ef3f0164f467',
+            elementId: 'mendable-component',
+            type: "inPlace", // Either inPlace or searchBar
+
+            // Everything related to placeholders
+            welcomeMessage: "Hey there! I am Emilio's Portfolio personal AI ChatBot, and I can help you with any questions you may have. What do you want to know about him?",
+            hintText: "Enter your question here...",
+            hintQuestions: [
+                "What is Emilio's project 'CodeWithEmil'?",
+                "What are some community-service projects he's done?",
+                "Has Emilio worked with renowned institutions?"
+            ],
+            messageSettings: {
+                hideSources: true
+            },
+
+            // Customization
+            style: {
+                darkMode: false,
+                accentColor: "#667eea"
+            },
+            inputSettings: {
+                askButtonStyle: {
+                    disabledColor: "#e3f2fd",
+                    disabledTextColor: "#4a5568",
+                    activeColor: "#e3f2fd",
+                    textColor: "#4a5568"
+                }
+            },
+            botIcon: "/static/images/bot-icon.png", // Sets up the bot's image
+            userIcon: "/static/images/user-icon.png" // Sets up the user's image
+        });
+    }
+
+    // Observe when the FAQ section enters the viewport
+    window.addEventListener("DOMContentLoaded", () => {
+        const faq = document.getElementById("faq");
+        if (!faq) return;
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            if (entries[0].isIntersecting) {
+                obs.disconnect(); // Only trigger once
+                loadMendableScript(() => {
+                    // Give the script a tiny buffer to register "window.Mendable"
+                    setTimeout(initMendable, 100);
+                });
+            }
+        }, {
+            rootMargin: "0px 0px -40% 0px"
+        });
+
+        observer.observe(faq);
+    });
+</script>
+
 <body>
     <!-- Navigation Header -->
     <nav class="nav-header">
@@ -379,54 +453,5 @@
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="../static/js/main.js"></script>
 
-    <script defer src=https://unpkg.com/@mendable/search@0.0.203/dist/umd/mendable-bundle.min.js></script>
-    <script defer>
-        document.addEventListener('DOMContentLoaded', function() {
-
-        const style = { 
-            darkMode: false, 
-            accentColor: "#667eea",
-        }
-
-        Mendable.initialize({
-            // Setting up the AI chatbot
-            anon_key: '9e11c16e-4f03-4b29-bdaa-ef3f0164f467',
-            elementId: 'mendable-component',
-            type: "inPlace", // either inPlace or searchBar
-            style:style,
-
-            // Helpful text
-            welcomeMessage: "Hey there! I am Emilio's Portfolio personal AI ChatBot, and I can help you with any questions you may have. What do you want to know about him?",
-            hintText: "Enter your question here...",
-            hintQuestions: 
-                ["What is Emilio's project 'CodeWithEmil'?", 
-                "What are some community-service projects he's done?",
-                "Has Emilio worked with renowned institutions?"
-                ],
-            
-
-            // Additional customization
-
-            messageSettings: {
-                hideSources: true,
-            },
-
-            inputSettings: {
-                askButtonStyle: {
-                    disabledColor: "#e3f2fd",
-                    disabledTextColor: "#4a5568",
-                    
-                    activeColor: "#e3f2fd",
-                    textColor: "#4a5568",
-                }
-            },
-
-            // Customizing icons
-            botIcon: "/static/images/bot-icon.png",
-            userIcon: "/static/images/user-icon.png",
-        });
-        });
-    </script>
 </body>
 </html>
-
