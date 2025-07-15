@@ -21,7 +21,6 @@
 }
 
 .timeline-item {
-   //border: solid red;
    position: relative;
    margin-bottom: 3rem;
    padding-left: 5rem;
@@ -44,7 +43,7 @@
 }
 
 .timeline-content {
-   //border: solid lime;
+   position: relative;
    background-color: var(--background-color);
    padding: 2rem;
    border-radius: 0.75rem;
@@ -96,4 +95,23 @@
 .timeline-description {
    color: var(--text-secondary);
    line-height: 1.6;
+}
+
+.timeline-panel-link {
+   display: block;
+   text-decoration: none;
+   color: inherit;
+   position: relative;
+}
+
+/* Link icon in corner */
+.panel-link-icon {
+   position: absolute;
+   top: 1rem;
+   right: 1rem;
+   font-size: 1rem;
+   color: var(--primary-color);
+   opacity: 0.8;
+   pointer-events: none;
+   /* Prevents the icon from blocking click */
 }

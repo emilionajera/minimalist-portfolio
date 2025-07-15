@@ -87,7 +87,7 @@ mobileMenuToggle.addEventListener('click', function() {
 
 
 // Parallax effect for hero section
-window.addEventListener('scroll', function() {
+/*window.addEventListener('scroll', function() {
     const scrolled = window.pageYOffset;
     const heroSection = document.querySelector('.hero-section');
     const rate = scrolled * -0.5;
@@ -95,7 +95,7 @@ window.addEventListener('scroll', function() {
     if (heroSection) {
         heroSection.style.transform = `translateY(${rate}px)`;
     }
-});
+});*/
 
 // Add typing animation to hero title
 function typeWriter(element, text, speed = 100) {
